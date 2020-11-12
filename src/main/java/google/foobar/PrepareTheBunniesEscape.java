@@ -170,9 +170,6 @@ class Graph {
             }
         }
 
-        //System.out.println(breakWallPath.size());
-        //breakWallPath.stream().forEach(w -> System.out.println(w));
-
         List<List<Node>> lNodes = new ArrayList<>();
 
 
