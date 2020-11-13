@@ -9,10 +9,14 @@ public class PrepareTheBunniesEscape {
     public static final boolean breakWall = true;
     public static final int wallsAllowedToBreak = 1;
 
-    public int solve(String[][] space) {
+    public static int solve(int[][] space) {
+
+        String[][] _space = Arrays.stream(space).map(a ->
+                Arrays.stream(a).mapToObj(i ->
+                        Integer.toString(i)).toArray(String[]::new)).toArray(String[][]::new);
 
         Graph graph = new Graph();
-        graph.generateGraph(space, "PrepareTheBunniesEscape");
+        graph.generateGraph(_space, "PrepareTheBunniesEscape");
         String end = (space.length-1) + "_" + (space[0].length-1);
         String start = "0_0";
         graph.dfs(start);
